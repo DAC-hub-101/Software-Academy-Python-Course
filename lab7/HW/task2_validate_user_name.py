@@ -18,7 +18,11 @@ user_names = [
 	"12345678901234567890"
 ]
 
+valid = re.compile(r"^[a-zA-Z0-9_-]{2,15}$")
+#
 
+newlist = list(filter(valid.match, user_names))
+print(newlist)
 
 # ОЧАКВАН РЕЗУЛТАТ:
 # Valid user names are: ['a_d_a', 'a-d-a', 'pesho21']
